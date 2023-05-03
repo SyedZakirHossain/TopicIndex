@@ -48,7 +48,7 @@ ROOT_URLCONF = 'clq.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,15 +67,10 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}"""
+
 
 #open postgresql> select database > sehema > table > table name> rightclick > view/ Edit Data > All rows
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -88,7 +83,17 @@ DATABASES = {
 }
 
 
-
+"""
+DATABASES={
+    
+        DB_ENGINE=os.environ.get('DB_ENGINE')
+        
+        DB_HOST=os.environ.get('DB_HOST')
+        DB_NAME=os.environ.get('DB_NAME')
+        DB_USER=os.environ.get('DB_USER')
+        DB_PASSWORD=os.environ.get('DB_PASSWORD')
+        DB_PORT=os.environ.get('DB_PORT')
+} """
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

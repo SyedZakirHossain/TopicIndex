@@ -1,0 +1,1 @@
+web: gunicorn 'clq.wsgi' --log-file -
